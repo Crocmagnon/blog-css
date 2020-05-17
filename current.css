@@ -1,0 +1,154 @@
+body {
+    font-size: 110%;
+}
+
+#post .pic-container {
+    display: block;
+    text-align: center;
+}
+#post .profile-pic {
+    max-width: 200px;
+}
+
+/* Disable hidden effect for ease of use on touch screens */
+.hidden.user.action {
+    opacity: 1;
+}
+
+/* Set global variables for colors */
+:root {
+    --accent: #226997;
+}
+
+a.hashtag {
+    color: var(--main);
+}
+
+/* Links inside blog posts */
+article table a:not(.hashtag), article p a:not(.hashtag), article ul a:not(.hashtag), a.hashtag span + span {
+    color: var(--main);
+    border-bottom: solid var(--accent) 1px;
+    text-decoration: none;
+    transition: border-bottom .12s ease;
+}
+
+article table a:not(.hashtag):hover, article p a:not(.hashtag):hover, article p a:not(.hashtag):focus, article ul a:not(.hashtag):hover, article ul a:not(.hashtag):focus, a.hashtag:hover span + span {
+    text-decoration: none;
+    border-color: transparent;
+}
+
+#post a, #post a.hashtag span + span {
+    border-bottom-width: 2.5px;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Set global variables for colors */
+    :root {
+        --accent: #496474;
+        --main: #eeeeee;
+    }
+    body {
+        color: var(--main);
+        background: #111;
+    }
+    article p a, article ul a {
+        color: var(--main);
+    }
+    header p.description, header nav a {
+        color: #7d7d7d;
+    }
+    body#post article time.dt-published {
+        color: #cacaca;
+    }
+    body#collection a.read-more {
+        color: #8c8c8c;
+    }
+
+
+    /*
+       Written in 2020 by Write.as
+
+       To the extent possible under law, the author(s) have dedicated all 
+       copyright and related and neighboring rights to this software to the 
+       public domain worldwide. This software is distributed without any 
+       warranty.
+
+       You should have received a copy of the CC0 Public Domain Dedication 
+       along with this software. If not, see 
+       http://creativecommons.org/publicdomain/zero/1.0
+    */
+    body .post-title a:link {
+        color: #ccc;
+    }
+
+    #collection .post-title a {
+        color: #ccc;
+    }
+
+    #collection {
+        color: #eee;
+    }
+
+    #collection pre {
+        background: #060606;
+    }
+
+    body h1 a, body header h2 a {
+        color: #cfcfcf;
+    }
+
+    body h1 a:hover, body header h2 a:hover {
+        color: #fff;
+    }
+
+    body h1 a:visited, body header h2 a:visited {
+        color: #ccc;
+    }
+
+    body #manage ul a, body .dropdown-nav ul a, body #manage ul ul a, body #manage ul a {
+        color: #ccc;
+    }
+
+    body .dropdown-nav ul ul, body .dropdown-nav ul li:hover, body #manage ul ul, body #manage ul ul li:hover, body #manage ul li:hover {
+        background: #222;
+    }
+
+    body #official-writing h2, body #official-writing h3, body #official-writing h4, body #wrapper h2, body #wrapper h3, body #wrapper h4 {
+        color: #ddd;
+    }
+
+    body a {
+        color: #a2a2ff;
+    }
+
+    body #official-writing h2, body #official-writing h3, body #official-writing h4, body #wrapper h2, body #wrapper h3, body #wrapper h4 {
+        color: #aaa;
+    }
+
+    body #official-writing ul.collections li.collection a.title:link, body #official-writing ul.collections li.collection a.title:visited, body #wrapper ul.collections li.collection a.title:link, body #wrapper ul.collections li.collection a.title:visited {
+        color: #cfcfcf;
+    }
+
+    body #official-writing ul.collections li a.create, body #wrapper ul.collections li a.create {
+        color: #aaa;
+    }
+
+    body#me #official-writing h2 a:link, body#me #official-writing h2 a:visited {
+        color: #a2a2ff;
+    }
+
+
+    input {
+        background: #202020;
+        color: #bbb;
+    }
+
+    #manage ul ul li img {
+        filter: invert(1);
+    }
+
+    #post code, #collection code, #subpage code {
+        background: #202020;
+        color: #bbb;
+    }
+}

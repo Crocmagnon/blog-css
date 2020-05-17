@@ -1,0 +1,143 @@
+// Set global variables for colors
+:root {
+  --accent: #226997;
+  --main: #111111;
+  --main2: #575757;
+  --main3: #7d7d7d;
+  --background: #ffffff;
+  --background2: #f7f7f7;
+}
+
+body {
+  font-size: 110%;
+  color: var(--main);
+  background-color: var(--background);
+
+  h1, header h2 {
+    a, a:visited, a:link {
+      color: var(--main);
+    }
+  }
+
+  header {
+    p.description, nav a {
+      color: var(--main2);
+    }
+  }
+
+  // Disable hidden effect for ease of use on touch screens
+  .hidden.user.action {
+    opacity: 1;
+    color: var(--main3)
+  }
+
+  // Links in articles and in list view
+  article {
+    table, p, ul {
+      a:not(.hashtag), a.hashtag span + span {
+        color: var(--main);
+        border-bottom: solid var(--accent) 1px;
+        text-decoration: none;
+        transition: border-bottom .12s ease;
+      }
+
+      a:not(.hashtag):hover, a:not(.hashtag):focus, a.hashtag:hover span + span, a.hashtag:focus span + span {
+        text-decoration: none;
+        border-color: transparent;
+      }
+    }
+  }
+
+  // Override for links in articles only
+  &#post, &#subpage {
+    a, a.hashtag span + span {
+      border-bottom-width: 2.5px;
+    }
+  }
+
+  // "Menu" dropdown, only visible to author
+  #manage, .dropdown-nav, #manage ul {
+    a {
+      color: var(--main);
+    }
+
+    ul {
+      background: var(--background);
+
+      li {
+        &:hover {
+          background: var(--background2);
+        }
+
+        a {
+          color: var(--main);
+        }
+      }
+    }
+  }
+
+  // Does subpage even exist?
+  &#post, &#collection, &#subpage {
+    color: var(--main);
+
+    pre, code {
+      background: var(--background2);
+      color: var(--main2)
+    }
+
+    pre {
+      background: var(--background2);
+    }
+
+    .post-title a {
+      color: var(--main);
+    }
+
+    a.read-more {
+      color: var(--main3);
+    }
+
+    article time.dt-published {
+      color: var(--main2);
+    }
+
+    blockquote {
+      color: var(--main2)
+    }
+
+    .pic-container {
+      display: block;
+      text-align: center;
+
+      .profile-pic {
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #226997;
+    --main: #eeeeee;
+    --main2: #cecece;
+    --main3: #b1b1b1;
+    --background: #111111;
+    --background2: #575656;
+  }
+
+  // Add transparency to the image to make it look lighter
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+
+  // No transparency for "view draft" icon
+  #manage ul ul li img {
+    opacity: 1;
+    filter: invert(1);
+  }
+}

@@ -11,7 +11,7 @@
 }
 
 body {
-  font-size: 110%;
+  font-size-adjust: inherit;
   color: var(--main);
   background-color: var(--background);
 
@@ -35,6 +35,8 @@ body {
 
   // Links in articles and in list view
   article {
+    font-size: 1.2em;
+
     table, p, ul {
       a:not(.hashtag), a.hashtag span + span {
         color: var(--main);
@@ -99,12 +101,51 @@ body {
       color: var(--main3);
     }
 
-    article time.dt-published {
-      color: var(--main2);
+    article, #wrapper article {
+      &.sans {
+        white-space: normal;
+      }
+
+      h2#title {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        display: block;
+        margin: 1.5em 0 .5em 0;
+      }
+
+      h2 + time.dt-published {
+        color: var(--main2);
+        margin-bottom: 1em;
+      }
+
+      p {
+        display: block;
+        white-space: normal;
+        line-height: 1.7;
+      }
+
+      p, table, ul, pre, ol, blockquote {
+        margin: 0 0 1.5em 0;
+      }
+
+      li {
+        margin: 0;
+      }
+
+      ul, ol {
+        margin-top: -1em;
+      }
+
+      blockquote p:last-child {
+        margin-bottom: 0;
+      }
     }
 
     blockquote {
-      color: var(--main2)
+      color: var(--main2);
     }
 
     .pic-container {

@@ -139,6 +139,10 @@ body {
         margin-top: -1em;
       }
 
+      h2 + ul, h2 + ol {
+        margin-top: 0;
+      }
+
       blockquote p:last-child {
         margin-bottom: 0;
       }

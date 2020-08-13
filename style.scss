@@ -141,6 +141,9 @@ body {
 
       ul, ol {
         margin-top: -1em;
+        ul, ol {
+          margin: 0;
+        }
       }
 
       h2 + ul, h2 + ol {
